@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { FaUser, FaCartArrowDown, FaSearch } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaStore } from "react-icons/fa6";
 
 const Navbar = () => {
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
@@ -54,7 +55,7 @@ const Navbar = () => {
         </div>
         <div className="become-seller">
           <a href="/become-seller" className="become-seller-link">
-            <FaUser className="navbar-icon" />
+            <FaStore className="navbar-icon" />
             <span className="icon-label">Become a Seller</span> {/* Added label */}
           </a>
         </div>
