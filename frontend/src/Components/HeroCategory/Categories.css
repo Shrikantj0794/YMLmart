@@ -1,0 +1,8 @@
+.category-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 16px 16px;
+  }
+  

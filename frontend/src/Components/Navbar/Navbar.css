@@ -1,117 +1,143 @@
+/* Common styling for the navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #ffffff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+}
 
-  .navbar-left {
-    flex: 1;
-  }
-  
-  .logo {
-    height: 40px;
-  }
-  
-  .navbar-center {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .search-container {
-    position: relative;
-    width: 70%;
-  }
-  
-  .search-bar {
-    width: 100%;
-    padding: 10px 10px 10px 40px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    background-color: aliceblue;
-    color: #333;
-  }
-  
-  .search-bar::placeholder {
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 1.2rem;
-  }
-  
-  .navbar-right {
-    flex: 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .profile,
-  .cart,
-  .become-seller,
-  .three-dots {
-    margin-left: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-button,
-  .three-dots-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-icon {
-    font-size: 1.3rem;
-    color: #2497de;
-    margin-right: 5px;
-  }
-  
-  .icon-label {
-    color: #333; /* Label text color */
-    font-size: 1rem; /* Adjusted font size for labels */
-  }
-  
-  .cart-link,
-  .become-seller-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 150px;
-  }
-  
-  .dropdown a {
-    display: block;
-    padding: 10px 20px;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .dropdown a:hover {
-    background-color: #f1f1f1;
-  }
-  
+.navbar-left {
+  flex: 1;
+}
+
+.logo {
+  height: 40px;
+}
+
+.navbar-center {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.search-container {
+  position: relative;
+  width: 70%;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background-color: aliceblue;
+  color: #333;
+}
+
+.search-bar::placeholder {
+  font-size: 1rem;
+  color: #666;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.navbar-right {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile,
+.cart,
+.become-seller,
+.three-dots {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-button,
+.three-dots-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  font-size: 1.3rem;
+  color: #2497de;
+  margin-right: 5px;
+}
+.innerIcon{
+  justify-content: center;
+  align-items: center;
+}
+.icon-label {
+  color: #333;
+  font-size: 1rem;
+}
+
+.cart-link,
+.become-seller-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
+.three-dots-dropdown {
+  right: 0; /* Align dropdown to the right */
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+/* New CSS for hover effect and rotating arrow */
+.profile-button:hover,
+.three-dots-button:hover {
+  background-color: #f1f1f1;
+  border: rgb(187, 187, 187) solid 0.5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.arrow-icon {
+  margin-left: 5px;
+  transition: transform 0.5s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+.dropdown:hover {
+  display: block;
+}

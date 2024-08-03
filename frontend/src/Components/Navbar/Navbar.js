@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FaUser, FaCartArrowDown, FaSearch } from "react-icons/fa";
+import { FaUser, FaCartArrowDown,FaRegUserCircle, FaSearch, FaChevronDown } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaStore } from "react-icons/fa6";
 
@@ -8,13 +8,11 @@ const Navbar = () => {
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const [threeDotsDropdownOpen, setThreeDotsDropdownOpen] = useState(false);
 
-  const toggleProfileDropdown = () => {
-    setProfileDropdownOpen(!profileDropdownOpen);
-  };
+  const handleMouseEnterProfile = () => setProfileDropdownOpen(true);
+  const handleMouseLeaveProfile = () => setProfileDropdownOpen(false);
 
-  const toggleThreeDotsDropdown = () => {
-    setThreeDotsDropdownOpen(!threeDotsDropdownOpen);
-  };
+  const handleMouseEnterThreeDots = () => setThreeDotsDropdownOpen(true);
+  const handleMouseLeaveThreeDots = () => setThreeDotsDropdownOpen(false);
 
   return (
     <nav className="navbar">
@@ -32,14 +30,19 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-right">
-        <div className="profile">
-          <button onClick={toggleProfileDropdown} className="profile-button">
+        <div
+          className="profile"
+          onMouseEnter={handleMouseEnterProfile}
+          onMouseLeave={handleMouseLeaveProfile}
+        >
+          <button className="profile-button">
             <FaUser className="navbar-icon" />
-            <span className="icon-label">Username</span> {/* Added label */}
+            <span className="icon-label">Login</span>
+            <FaChevronDown className={`arrow-icon ${profileDropdownOpen ? 'rotate' : ''}`} />
           </button>
           {profileDropdownOpen && (
             <div className="dropdown profile-dropdown">
-              <a href="/profile">My Profile</a>
+              <a href="/profile"><FaRegUserCircle className='innerIcon'/>My Profile</a>
               <a href="/wishlist">Wishlist</a>
               <a href="/coupons">Coupons</a>
               <a href="/notifications">Notification</a>
@@ -50,17 +53,21 @@ const Navbar = () => {
         <div className="cart">
           <a href="/cart" className="cart-link">
             <FaCartArrowDown className="navbar-icon" />
-            <span className="icon-label">Cart</span> {/* Added label */}
+            <span className="icon-label">Cart</span>
           </a>
         </div>
         <div className="become-seller">
           <a href="/become-seller" className="become-seller-link">
             <FaStore className="navbar-icon" />
-            <span className="icon-label">Become a Seller</span> {/* Added label */}
+            <span className="icon-label">Become a Seller</span>
           </a>
         </div>
-        <div className="three-dots">
-          <button onClick={toggleThreeDotsDropdown} className="three-dots-button">
+        <div
+          className="three-dots"
+          onMouseEnter={handleMouseEnterThreeDots}
+          onMouseLeave={handleMouseLeaveThreeDots}
+        >
+          <button className="three-dots-button">
             <BsThreeDotsVertical className="navbar-icon" />
           </button>
           {threeDotsDropdownOpen && (
